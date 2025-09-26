@@ -11,18 +11,18 @@ import { navigation } from '../../data/navigation';
   - Implements hamburger menu pattern for mobile screens
   - Leverages Astro's static rendering for optimal performance
 -->
-<header class="bg-white shadow-sm border-b border-gray-100">
+<header class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- 
       Flex container: Mobile uses column layout with menu button
       Desktop (lg:) uses row layout with inline navigation
     -->
-    <div class="flex justify-between items-center h-16">
+    <div class="flex justify-between items-center h-14">
       <!-- Logo Section: Consistent across all screen sizes -->
       <div class="flex-shrink-0">
         <a
           href="/"
-          class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
+          class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
         >
           AstroFit Logo
         </a>

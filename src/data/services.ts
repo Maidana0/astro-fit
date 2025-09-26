@@ -1,6 +1,6 @@
 // Service interface definition
 // Separating data from components in Astro promotes maintainability,
-// enables type safety, and allows easy content updates without touching component logic
+// enables type safety, and allows easy content updates for Argentine market
 export interface Service {
   id: number;
   title: string;
@@ -9,46 +9,46 @@ export interface Service {
   features: string[]; // List of benefits or included items for each service
 }
 
-// Services data array with complete fitness service information
-// This centralized data can be imported across multiple Astro components
+// Services data array optimized for Argentine PT market
+// Focuses on personalized training and nutrition with local terminology
 export const services: Service[] = [
   {
     id: 1,
-    title: 'Personal Training',
+    title: 'Entrenamiento Personalizado',
     description:
-      'One-on-one fitness coaching tailored to your specific goals and fitness level.',
+      'Rutinas diseñadas específicamente para tus objetivos. Seguimiento constante y ajustes semanales.',
     icon: 'dumbbell',
     features: [
-      'Customized workout plans',
-      'Progress tracking',
-      'Nutrition guidance',
-      '24/7 support',
+      'Rutinas personalizadas',
+      'Seguimiento por WhatsApp',
+      'Ajustes semanales',
+      'Videos explicativos',
     ],
   },
   {
     id: 2,
-    title: 'Nutrition Plans',
+    title: 'Asesoría Nutricional',
     description:
-      'Customized meal plans and nutritional guidance to support your fitness journey.',
+      'Plan alimentario adaptado a tu estilo de vida y objetivos. Con recetas y lista de compras.',
     icon: 'nutrition',
     features: [
-      'Personalized meal plans',
-      'Macro tracking',
-      'Recipe suggestions',
-      'Weekly check-ins',
+      'Plan alimentario personalizado',
+      'Recetas fáciles',
+      'Lista de compras',
+      'Seguimiento semanal',
     ],
   },
   {
     id: 3,
-    title: 'Group Classes',
+    title: 'Combo Integral',
     description:
-      'High-energy group fitness sessions including HIIT, yoga, and strength training.',
-    icon: 'group',
+      'Entrenamiento + Nutrición + Seguimiento 24/7. La opción más completa para resultados garantizados.',
+    icon: 'combo',
     features: [
-      'Multiple class types',
-      'All skill levels',
-      'Community support',
-      'Flexible scheduling',
+      'Todo incluido',
+      'Soporte 24/7',
+      'Resultados en 30 días',
+      'Descuento especial',
     ],
   },
 ];

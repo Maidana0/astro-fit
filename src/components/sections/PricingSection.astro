@@ -1,7 +1,7 @@
 ---
 // Import Button component for consistent CTA styling
 import Button from '../ui/Button.astro';
-import {pricing} from "../../data/pricing";
+import { pricingPlans } from '../../data/pricing.ts';
 ---
 
 <!-- 
@@ -10,16 +10,16 @@ import {pricing} from "../../data/pricing";
   - Responsive grid layout with mobile stacking
   - Highlights popular plan for conversion optimization
 -->
-<section class="py-16 bg-gray-50" id="pricing">
+<section class="py-16 bg-gray-50" id="precios">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section header with compelling copy -->
     <div class="text-center mb-12">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-        Choose Your Plan
+        Elegí Tu Plan
       </h2>
       <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        Flexible pricing options to fit your fitness journey and budget
+        Opciones flexibles adaptadas a tu presupuesto y objetivos de transformación
       </p>
     </div>
     
@@ -33,14 +33,14 @@ import {pricing} from "../../data/pricing";
         Iterate over pricing plans with conditional styling
         Popular plan gets enhanced visual treatment for conversion
       -->
-      {pricing.map((plan) => (
-        <div class={`relative bg-white rounded-lg shadow-md p-8 ${plan.popular ? 'ring-2 ring-blue-500 transform scale-105' : ''}`}>
+      {pricingPlans.map((plan) => (
+        <div class={`relative bg-white rounded-lg shadow-md p-8 ${plan.popular ? 'ring-2 ring-violet-500 transform scale-105' : ''}`}>
           
           <!-- Popular badge for highlighted plan -->
           {plan.popular && (
             <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
-                Most Popular
+              <span class="bg-violet-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                Más Elegido
               </span>
             </div>
           )}
@@ -48,6 +48,7 @@ import {pricing} from "../../data/pricing";
           <!-- Plan header with name and pricing -->
           <div class="text-center mb-6">
             <h3 class="text-xl font-semibold text-gray-900 mb-2">{plan.name}</h3>
+            <p class="text-sm text-gray-600 mb-3">{plan.description}</p>
             <div class="flex items-baseline justify-center">
               <span class="text-4xl font-bold text-gray-900">{plan.price}</span>
               <span class="text-gray-600 ml-1">{plan.duration}</span>
@@ -61,7 +62,7 @@ import {pricing} from "../../data/pricing";
           <ul class="space-y-3 mb-8">
             {plan.features.map((feature) => (
               <li class="flex items-center text-gray-700">
-                <span class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></span>
+                <span class="w-2 h-2 bg-violet-500 rounded-full mr-3 flex-shrink-0"></span>
                 {feature}
               </li>
             ))}
@@ -71,10 +72,10 @@ import {pricing} from "../../data/pricing";
           <Button 
             variant={plan.popular ? "primary" : "outline"} 
             size="lg" 
-            class="w-full"
+            class={`w-full ${plan.popular ? 'bg-violet-600 hover:bg-violet-700' : 'border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white'}`}
             href="/contact"
           >
-            Get Started
+            Comenzar Ahora
           </Button>
         </div>
       ))}
@@ -83,9 +84,9 @@ import {pricing} from "../../data/pricing";
 </section>
 
 <!-- 
-  Why pricing data is internal vs external file:
-  - Pricing is component-specific and not reused elsewhere
-  - Frequent changes require tight coupling with component logic
-  - Popular flag and styling logic are presentation concerns
-  - Services data is reusable, pricing data is contextual
+  Argentine market pricing strategy:
+  - ARS currency for local market relevance
+  - Tiered pricing with clear value progression
+  - Popular plan highlighting for conversion optimization
+  - Local terminology and cultural context
 -->

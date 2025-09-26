@@ -4,8 +4,8 @@ type navigatinoItem = {
 };
 
 export const navigation: navigatinoItem[] = [
-  { name: 'Home', href: '/' },
-  { name: 'Services', href: '/#services' },
-  { name: 'Pricing', href: '/#pricing' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Inicio', href: '/#inicio' },
+  { name: 'Servicios', href: '/#servicios' },
+  { name: 'Precios', href: '/#precios' },
+  { name: 'Contacto', href: '/contacto' },
 ];

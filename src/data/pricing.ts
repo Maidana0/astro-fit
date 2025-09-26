@@ -1,43 +1,61 @@
-// Internal pricing data - mocked here instead of separate file
-// Pricing data changes frequently and is component-specific
-// Unlike services data which is reused across multiple components
-export const pricing = [
+// Pricing interface definition for Argentine PT market
+// Includes local currency and market-specific features
+export interface PricingPlan {
+  id: number;
+  name: string;
+  price: string;
+  duration: string;
+  popular: boolean;
+  features: string[];
+  description: string;
+}
+
+// Pricing plans optimized for Buenos Aires market
+// Uses ARS currency and local payment preferences
+export const pricingPlans: PricingPlan[] = [
   {
-    name: 'Basic',
-    price: '$29',
-    duration: '/month',
+    id: 1,
+    name: "Plan Básico",
+    price: "ARS $15.000",
+    duration: "/mes",
     popular: false,
+    description: "Ideal para comenzar tu transformación",
     features: [
-      'Access to gym equipment',
-      'Basic workout plans',
-      'Mobile app access',
-      'Community support',
-    ],
+      "Rutina personalizada",
+      "Seguimiento semanal",
+      "Acceso a videos",
+      "Soporte por WhatsApp"
+    ]
   },
   {
-    name: 'Premium',
-    price: '$59',
-    duration: '/month',
+    id: 2,
+    name: "Plan Premium",
+    price: "ARS $25.000",
+    duration: "/mes",
     popular: true,
+    description: "La opción más elegida por nuestros clientes",
     features: [
-      'Everything in Basic',
-      'Personal trainer sessions',
-      'Nutrition consultations',
-      'Priority booking',
-      'Custom meal plans',
-    ],
+      "Todo del Plan Básico",
+      "Asesoría nutricional completa",
+      "Ajustes bi-semanales",
+      "Llamadas de seguimiento",
+      "Plan alimentario personalizado"
+    ]
   },
   {
-    name: 'Elite',
-    price: '$99',
-    duration: '/month',
+    id: 3,
+    name: "Plan Elite",
+    price: "ARS $35.000",
+    duration: "/mes",
     popular: false,
+    description: "Transformación completa con resultados garantizados",
     features: [
-      'Everything in Premium',
-      '24/7 trainer access',
-      'Advanced analytics',
-      'Recovery sessions',
-      'VIP amenities',
-    ],
-  },
+      "Todo del Plan Premium",
+      "Soporte 24/7",
+      "Sesiones de coaching",
+      "Análisis corporal mensual",
+      "Acceso prioritario",
+      "Garantía de resultados"
+    ]
+  }
 ];

@@ -1,5 +1,5 @@
 // Testimonial interface definition
-// Separating testimonial data enables easy content management and type safety
+// Separating testimonial data enables easy content management for Argentine market
 export interface Testimonial {
   id: number;
   quote: string;
@@ -7,25 +7,25 @@ export interface Testimonial {
   position: string;
 }
 
-// Testimonials data array with client success stories
-// Centralized data can be imported across multiple components
+// Testimonials data array optimized for Argentine PT market
+// Local names and cultural context for better connection
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    quote: "AstroFit transformed my approach to fitness. The personalized training and nutrition guidance helped me achieve goals I never thought possible.",
-    author: "Sarah Johnson",
-    position: "Marketing Manager"
+    quote: "En 3 meses bajé 15 kilos y gané mucha fuerza. El seguimiento por WhatsApp fue clave, siempre estaba ahí para resolver mis dudas.",
+    author: "María González",
+    position: "Contadora"
   },
   {
     id: 2,
-    quote: "The group classes are incredible! The community support and expert instruction keep me motivated and coming back every week.",
-    author: "Mike Chen",
-    position: "Software Developer"
+    quote: "Nunca pensé que podía entrenar en casa y tener resultados tan buenos. Las rutinas son super claras y el plan nutricional es fácil de seguir.",
+    author: "Carlos Mendoza",
+    position: "Ingeniero"
   },
   {
     id: 3,
-    quote: "After struggling with fitness for years, AstroFit's comprehensive approach finally gave me the results and confidence I was looking for.",
-    author: "Emily Rodriguez",
-    position: "Teacher"
+    quote: "Después de años sin hacer ejercicio, finalmente encontré un método que funciona. La atención personalizada marca la diferencia.",
+    author: "Ana Martínez",
+    position: "Profesora"
   }
 ];

@@ -3,13 +3,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/sections/Hero.astro';
 import ServicesGrid from '../components/sections/ServicesGrid.astro';
-import PricingSection from '../components/sections/PricingSection.astro';
+import ValueProp from '../components/sections/ValueProp.astro';
 import TestimonialsSection from '../components/sections/TestimonialsSection.astro';
+import PricingSection from '../components/sections/PricingSection.astro';
+import SocialMediaGrid from '../components/sections/SocialMediaGrid.astro';
 
-// Page metadata for SEO and social sharing
-const pageTitle = 'AstroFit - Transform Your Fitness Journey';
+// Page metadata for Argentine PT market
+const pageTitle = 'AstroFit - Transformá Tu Cuerpo Con Un Profesional';
 const pageDescription =
-  'Achieve your fitness goals with personalized training, expert nutrition guidance, and a supportive community.';
+  'Entrenamiento personalizado y asesoría nutricional. Estudiante de Educación Física con seguimiento por WhatsApp. Resultados garantizados.';
 ---
 
 <!-- 
@@ -21,36 +23,58 @@ const pageDescription =
 <BaseLayout title={pageTitle} description={pageDescription}>
   <!-- 
     Hero Section: Primary conversion area
-    - Captures attention with compelling headline
-    - Provides clear value proposition
-    - Includes primary CTAs for user engagement
+    - Captures attention with transformation focus
+    - Argentine market terminology and cultural context
+    - Clear CTAs for immediate engagement
   -->
   <Hero />
-
+  
   <!-- 
-    Services Grid: Social proof and feature showcase
-    - Demonstrates core value offerings
-    - Uses imported services data for consistency
-    - Builds trust through detailed feature lists
+    Services Grid: Core offerings showcase
+    - Three distinct service tiers with local terminology
+    - Emphasizes personalized approach and WhatsApp support
+    - Builds understanding of value proposition
   -->
   <ServicesGrid />
-
+  
+  <!-- 
+    Value Proposition: Trust and credibility building
+    - Professional credentials and expertise
+    - Unique differentiators (WhatsApp, flexibility)
+    - Results guarantee reduces purchase anxiety
+  -->
+  <ValueProp />
+  
+  <!-- 
+    Testimonials: Social proof and validation
+    - Real client success stories
+    - Builds trust through peer recommendations
+    - Addresses common concerns and objections
+  -->
+  <TestimonialsSection />
+  
   <!-- 
     Pricing Section: Conversion optimization
-    - Clear pricing structure removes friction
-    - Popular plan highlighting guides decision making
-    - Final CTA before footer contact information
+    - ARS currency for local market relevance
+    - Tiered pricing with popular plan highlighting
+    - Clear value progression and CTAs
   -->
   <PricingSection />
-
-  <TestimonialsSection />
+  
+  <!-- 
+    Social Media Grid: Authority and freshness
+    - Recent content tips for ongoing value
+    - Builds authority through consistent content
+    - Drives cross-platform engagement
+  -->
+  <SocialMediaGrid />
 </BaseLayout>
 
 <!-- 
-  Page Architecture Notes:
-  - All sections are statically rendered at build time
-  - No Astro Islands needed - purely presentational content
-  - Header/Footer contain minimal JavaScript (mobile menu toggle only)
-  - Optimal performance with zero unnecessary client-side JavaScript
-  - SEO-friendly with server-side rendering and semantic HTML
+  Argentine PT Market Architecture:
+  - Conversion-optimized funnel: Hero → Services → Trust → Social Proof → Pricing → Authority
+  - Local terminology and cultural context throughout
+  - ARS pricing and WhatsApp communication preferences
+  - Professional credentials and results guarantee for trust building
+  - Static rendering ensures fast loading for mobile-first Argentine market
 -->
