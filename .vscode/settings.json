@@ -1,0 +1,50 @@
+{
+  // --- Editor Formatting Settings ---
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // Usar Prettier como formateador principal
+  "files.eol": "\n", // Asegura saltos de línea consistentes (LF)
+  // --- Prettier (Formateo para Astro/TS/CSS) ---
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.singleQuote": true,
+  "prettier.semi": true,
+  // Formatear específicamente archivos Astro y TypeScript
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // --- Tailwind CSS IntelliSense ---
+  "tailwindCSS.includeLanguages": {
+    "astro": "html", // Asegura el soporte de IntelliSense para Tailwind en archivos .astro
+    "javascript": "javascript",
+    "typescript": "typescript",
+    "javascriptreact": "javascriptreact",
+    "typescriptreact": "typescriptreact"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "tw`([\\s\\S]+?)`",
+    "tw='([\\s\\S]+?)'"
+  ],
+  // --- Colores del Workspace (Opcional, toque personal) ---
+  // Ayuda a diferenciar esta ventana de VS Code de otras.
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#1e40af", // Azul fuerte (Blue-700 de Tailwind)
+    "titleBar.inactiveBackground": "#1e40af",
+    "titleBar.activeForeground": "#ffffff",
+    "statusBar.background": "#1e40af",
+    "statusBar.foreground": "#ffffff"
+  }
+}
