@@ -1,7 +1,7 @@
 ---
 // Import services data and ServiceCard component
-import { services } from '../../data/services.ts';
-import ServiceCard from '../ui/ServiceCard.astro';
+import { services } from '@data/services.ts';
+import ServiceCard from '@ui/ServiceCard.astro';
 
 // Static data fetching at build time - perfect for Astro's performance model
 // No client-side JavaScript needed for this purely presentational component
@@ -17,11 +17,15 @@ import ServiceCard from '../ui/ServiceCard.astro';
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section heading with centered alignment -->
     <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4" id="servicios">
+      <h2
+        class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+        id="servicios"
+      >
         Nuestros Servicios
       </h2>
       <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        Soluciones integrales de fitness diseñadas para transformar tu cuerpo y mente
+        Soluciones integrales de fitness diseñadas para transformar tu cuerpo y
+        mente
       </p>
     </div>
 

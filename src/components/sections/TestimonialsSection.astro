@@ -1,7 +1,7 @@
 ---
 // Import testimonials data and TestimonialCard component
-import { testimonials } from '../../data/testimonials.ts';
-import TestimonialCard from '../ui/TestimonialCard.astro';
+import { testimonials } from '@data/testimonials.ts';
+import TestimonialCard from '@ui/TestimonialCard.astro';
 
 // Static testimonial data fetching at build time
 // No client-side JavaScript needed for optimal performance
@@ -15,17 +15,17 @@ import TestimonialCard from '../ui/TestimonialCard.astro';
 -->
 <section class="py-16 bg-gray-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
     <!-- Section heading -->
     <div class="text-center mb-12">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
         Lo Que Dicen Nuestros Clientes
       </h2>
       <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        Historias reales de personas que transformaron sus vidas con nuestro método
+        Historias reales de personas que transformaron sus vidas con nuestro
+        método
       </p>
     </div>
-    
+
     <!-- 
       Responsive testimonials grid:
       - Mobile (base): 1 column for readability
@@ -38,13 +38,15 @@ import TestimonialCard from '../ui/TestimonialCard.astro';
         Each testimonial object passed as individual props to TestimonialCard
         Type safety ensured through Testimonial interface
       -->
-      {testimonials.map((testimonial) => (
-        <TestimonialCard 
-          quote={testimonial.quote}
-          author={testimonial.author}
-          position={testimonial.position}
-        />
-      ))}
+      {
+        testimonials.map((testimonial) => (
+          <TestimonialCard
+            quote={testimonial.quote}
+            author={testimonial.author}
+            position={testimonial.position}
+          />
+        ))
+      }
     </div>
   </div>
 </section>

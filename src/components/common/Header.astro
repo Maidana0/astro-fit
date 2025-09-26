@@ -1,5 +1,5 @@
 ---
-import { navigation } from '../../data/navigation';
+import { navigation } from '@data/navigation';
 
 // Server-side logic: No data fetching needed for static navigation
 // This component is purely presentational and uses Astro's static rendering
@@ -32,29 +32,17 @@ import { navigation } from '../../data/navigation';
         Desktop Navigation: Hidden on mobile (hidden), visible on large screens (lg:flex)
         Uses ml-auto to push navigation to the right side
       -->
-      <nav class="hidden lg:flex lg:space-x-8 ml-auto">
+      <nav class="hidden lg:flex lg:space-x-2 ml-auto uppercase">
         {
           navigation.map((item) => (
             <a
               href={item.href}
-              class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
+              class="text-gray-700 hover:text-violet-700 px-3 py-2 text-sm font-medium transition-colors"
             >
               {item.name}
             </a>
           ))
         }
-        <!-- <a href="/" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
-          Home
-        </a>
-        <a href="/services" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
-          Services
-        </a>
-        <a href="/pricing" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
-          Pricing
-        </a>
-        <a href="/contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
-          Contact
-        </a> -->
       </nav>
 
       <!-- 
@@ -63,7 +51,7 @@ import { navigation } from '../../data/navigation';
       -->
       <button
         id="mobile-menu-button"
-        class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors"
+        class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-violet-600 hover:bg-gray-100 transition-colors cursor-pointer"
         aria-expanded="false"
         aria-controls="mobile-menu"
         aria-label="Toggle navigation menu"
@@ -89,32 +77,18 @@ import { navigation } from '../../data/navigation';
       Uses full-width layout with vertical stacking for mobile UX
       Positioned below the main header bar
     -->
-    <nav id="mobile-menu" class="hidden lg:hidden pb-4">
+    <nav id="mobile-menu" class="hidden lg:hidden pb-4 text-center uppercase">
       <div class="space-y-1">
-        <a
-          href="/"
-          class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md text-base font-medium transition-colors"
-        >
-          Home
-        </a>
-        <a
-          href="/services"
-          class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md text-base font-medium transition-colors"
-        >
-          Services
-        </a>
-        <a
-          href="/pricing"
-          class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md text-base font-medium transition-colors"
-        >
-          Pricing
-        </a>
-        <a
-          href="/contact"
-          class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md text-base font-medium transition-colors"
-        >
-          Contact
-        </a>
+        {
+          navigation.map((item) => (
+            <a
+              href={item.href}
+              class="block px-3 py-2 text-gray-700 hover:text-violet-600 hover:bg-gray-50 rounded-md text-base font-medium transition-colors"
+            >
+              {item.name}
+            </a>
+          ))
+        }
       </div>
     </nav>
   </div>

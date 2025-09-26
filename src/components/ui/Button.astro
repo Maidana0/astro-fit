@@ -5,19 +5,20 @@ export interface Props {
   size?: 'sm' | 'lg';
   href?: string;
   class?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 // Destructure props with sensible defaults
-const { variant = 'primary', size = 'lg', href, class: className = '', ...rest } = Astro.props;
+const { variant = 'primary', size = 'lg', href, class: className = '', type = 'button', ...rest } = Astro.props;
 
 // Base styles shared across all button variants for consistency
 const baseStyles = 'inline-flex items-center justify-center font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50';
 
 // Variant-specific styling with proper contrast and accessibility
 const variantStyles = {
-  primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
+  primary: 'bg-violet-600 hover:bg-violet-700 text-white focus:ring-violet-500 ',
   secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500',
-  outline: 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:ring-blue-500'
+  outline: 'border border-violet-600 bg-white text-violet-600 hover:bg-violet-600 hover:text-white focus:ring-violet-500'
 };
 
 // Size-specific padding and text sizing for responsive design
@@ -43,7 +44,7 @@ const buttonClasses = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size
   </a>
 ) : (
   <!-- Button variant: Uses button tag for interactions -->
-  <button type="button" class={buttonClasses} tabindex="0" {...rest}>
+  <button type={type} class={buttonClasses} tabindex="0" {...rest}>
     <slot />
   </button>
 )}

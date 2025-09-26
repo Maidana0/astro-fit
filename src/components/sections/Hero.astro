@@ -1,6 +1,6 @@
 ---
 // Import Button component for consistent CTA styling
-import Button from '../ui/Button.astro';
+import Button from '@ui/Button.astro';
 
 // Static hero content optimized for Argentine PT market
 // Emphasizes personal transformation and professional credentials
@@ -12,9 +12,9 @@ import Button from '../ui/Button.astro';
   - Emphasizes online/hybrid training flexibility for 2025 market
   - Uses local terminology and cultural context for connection
 -->
+<div class="h-16 absolute top-0 opacity-0" id="inicio"></div>
 <section
-  class="relative bg-gradient-to-br from-purple-900 via-violet-800 to-indigo-900 text-white min-h-screen flex items-center"
-  id="inicio"
+  class="relative bg-gradient-to-br from-purple-900 via-violet-800 to-indigo-900 text-white min-h-[calc(100svh-3.5rem)] flex items-center"
 >
   <!-- 
     Modern gradient background with sophisticated purple/violet palette
@@ -30,7 +30,7 @@ import Button from '../ui/Button.astro';
       Compelling headline focused on transformation and expertise
       Uses Argentine Spanish terminology for local market connection
     -->
-    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+    <h1 class="text-4xl sm:text-6xl font-bold mb-8 leading-tight">
       Transformá Tu Cuerpo
       <span class="text-violet-400 block">Con Un Profesional</span>
     </h1>
@@ -40,7 +40,7 @@ import Button from '../ui/Button.astro';
       Addresses key concerns: expertise, flexibility, results
     -->
     <p
-      class="text-xl sm:text-2xl lg:text-3xl text-violet-100 mb-12 max-w-4xl mx-auto leading-relaxed"
+      class="text-xl lg:text-2xl text-violet-100 mb-12 max-w-3xl lg:max-w-4xl mx-auto leading-relaxed"
     >
       Entrenamiento personalizado + Asesoría nutricional. Estudiante de
       Educación Física con seguimiento por WhatsApp.
@@ -52,20 +52,10 @@ import Button from '../ui/Button.astro';
       Primary: immediate action, Secondary: information gathering
     -->
     <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-      <Button
-        variant="primary"
-        size="lg"
-        href="/contact"
-        class="bg-violet-500 hover:bg-violet-600 text-lg px-8 py-4"
-      >
+      <Button variant="primary" size="lg" href="/#contacto" class="text-lg">
         Empezar Hoy - Consulta Gratis
       </Button>
-      <Button
-        variant="outline"
-        size="lg"
-        href="#servicios"
-        class="border-violet-400 text-violet-400 hover:bg-violet-400 hover:text-violet-900 text-lg px-8 py-4"
-      >
+      <Button variant="outline" size="lg" href="#servicios" class="text-lg">
         Ver Planes y Precios
       </Button>
     </div>

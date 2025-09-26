@@ -1,12 +1,13 @@
 ---
 // Import base layout and page sections
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/sections/Hero.astro';
-import ServicesGrid from '../components/sections/ServicesGrid.astro';
-import ValueProp from '../components/sections/ValueProp.astro';
-import TestimonialsSection from '../components/sections/TestimonialsSection.astro';
-import PricingSection from '../components/sections/PricingSection.astro';
-import SocialMediaGrid from '../components/sections/SocialMediaGrid.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Hero from '@components/sections/Hero.astro';
+import ServicesGrid from '@components/sections/ServicesGrid.astro';
+import ValueProp from '@components/sections/ValueProp.astro';
+import TestimonialsSection from '@components/sections/TestimonialsSection.astro';
+import PricingSection from '@components/sections/PricingSection.astro';
+import Contact from '~/components/sections/Contact.astro';
+import SocialMediaGrid from '~/components/sections/SocialMediaGrid.astro';
 
 // Page metadata for Argentine PT market
 const pageTitle = 'AstroFit - Transformá Tu Cuerpo Con Un Profesional';
@@ -28,7 +29,7 @@ const pageDescription =
     - Clear CTAs for immediate engagement
   -->
   <Hero />
-  
+
   <!-- 
     Services Grid: Core offerings showcase
     - Three distinct service tiers with local terminology
@@ -36,7 +37,7 @@ const pageDescription =
     - Builds understanding of value proposition
   -->
   <ServicesGrid />
-  
+
   <!-- 
     Value Proposition: Trust and credibility building
     - Professional credentials and expertise
@@ -44,15 +45,7 @@ const pageDescription =
     - Results guarantee reduces purchase anxiety
   -->
   <ValueProp />
-  
-  <!-- 
-    Testimonials: Social proof and validation
-    - Real client success stories
-    - Builds trust through peer recommendations
-    - Addresses common concerns and objections
-  -->
-  <TestimonialsSection />
-  
+
   <!-- 
     Pricing Section: Conversion optimization
     - ARS currency for local market relevance
@@ -60,7 +53,15 @@ const pageDescription =
     - Clear value progression and CTAs
   -->
   <PricingSection />
-  
+
+  <!-- 
+    Testimonials: Social proof and validation
+    - Real client success stories
+    - Builds trust through peer recommendations
+    - Addresses common concerns and objections
+  -->
+  <TestimonialsSection />
+
   <!-- 
     Social Media Grid: Authority and freshness
     - Recent content tips for ongoing value
@@ -68,6 +69,14 @@ const pageDescription =
     - Drives cross-platform engagement
   -->
   <SocialMediaGrid />
+
+  <!-- 
+    Contact Section: Final conversion push
+    - Multiple contact methods (form, WhatsApp)
+    - Encourages immediate action
+    - Reinforces personalized approach
+  -->
+  <Contact />
 </BaseLayout>
 
 <!-- 

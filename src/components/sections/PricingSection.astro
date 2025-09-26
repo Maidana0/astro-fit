@@ -1,7 +1,7 @@
 ---
 // Import Button component for consistent CTA styling
-import Button from '../ui/Button.astro';
-import { pricingPlans } from '../../data/pricing.ts';
+import Button from '@ui/Button.astro';
+import { pricingPlans } from '@data/pricing.ts';
 ---
 
 <!-- 
@@ -72,8 +72,8 @@ import { pricingPlans } from '../../data/pricing.ts';
           <Button 
             variant={plan.popular ? "primary" : "outline"} 
             size="lg" 
-            class={`w-full ${plan.popular ? 'bg-violet-600 hover:bg-violet-700' : 'border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white'}`}
-            href="/contact"
+            class={`w-full`}
+            href="/#contacto"
           >
             Comenzar Ahora
           </Button>

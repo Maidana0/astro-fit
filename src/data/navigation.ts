@@ -7,5 +7,6 @@ export const navigation: navigatinoItem[] = [
   { name: 'Inicio', href: '/#inicio' },
   { name: 'Servicios', href: '/#servicios' },
   { name: 'Precios', href: '/#precios' },
-  { name: 'Contacto', href: '/contacto' },
+  { name: 'Publicaciones', href: '/#publicaciones' },
+  { name: 'Contacto', href: '/#contacto' },
 ];
