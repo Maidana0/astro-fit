@@ -1,0 +1,150 @@
+---
+import { navigation } from '../../data/navigation';
+
+// Server-side logic: No data fetching needed for static navigation
+// This component is purely presentational and uses Astro's static rendering
+---
+
+<!-- 
+  Main Header Component
+  - Uses mobile-first responsive design (base styles = mobile, lg: = desktop)
+  - Implements hamburger menu pattern for mobile screens
+  - Leverages Astro's static rendering for optimal performance
+-->
+<header class="bg-white shadow-sm border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 
+      Flex container: Mobile uses column layout with menu button
+      Desktop (lg:) uses row layout with inline navigation
+    -->
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo Section: Consistent across all screen sizes -->
+      <div class="flex-shrink-0">
+        <a
+          href="/"
+          class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
+        >
+          AstroFit Logo
+        </a>
+      </div>
+
+      <!-- 
+        Desktop Navigation: Hidden on mobile (hidden), visible on large screens (lg:flex)
+        Uses ml-auto to push navigation to the right side
+      -->
+      <nav class="hidden lg:flex lg:space-x-8 ml-auto">
+        {
+          navigation.map((item) => (
+            <a
+              href={item.href}
+              class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
+            >
+              {item.name}
+            </a>
+          ))
+        }
+        <!-- <a href="/" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+          Home
+        </a>
+        <a href="/services" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+          Services
+        </a>
+        <a href="/pricing" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+          Pricing
+        </a>
+        <a href="/contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+          Contact
+        </a> -->
+      </nav>
+
+      <!-- 
+        Mobile Menu Button: Visible on mobile (lg:hidden), hidden on desktop
+        Uses minimal JavaScript for interactivity
+      -->
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Toggle navigation menu"
+      >
+        <!-- Hamburger Icon: Simple SVG for better performance than icon fonts -->
+        <svg
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- 
+      Mobile Navigation Menu: Hidden by default (hidden), toggleable via JavaScript
+      Uses full-width layout with vertical stacking for mobile UX
+      Positioned below the main header bar
+    -->
+    <nav id="mobile-menu" class="hidden lg:hidden pb-4">
+      <div class="space-y-1">
+        <a
+          href="/"
+          class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md text-base font-medium transition-colors"
+        >
+          Home
+        </a>
+        <a
+          href="/services"
+          class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md text-base font-medium transition-colors"
+        >
+          Services
+        </a>
+        <a
+          href="/pricing"
+          class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md text-base font-medium transition-colors"
+        >
+          Pricing
+        </a>
+        <a
+          href="/contact"
+          class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md text-base font-medium transition-colors"
+        >
+          Contact
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- 
+  Minimal Client-Side JavaScript: Only for mobile menu toggle
+  Uses vanilla JS to avoid framework overhead - aligns with Astro's performance philosophy
+  Scoped to this component to prevent global namespace pollution
+-->
+<script>
+  // Mobile menu toggle functionality
+  // Runs once on page load, minimal performance impact
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+
+    if (button && menu) {
+      button.addEventListener('click', () => {
+        // Toggle menu visibility
+        const isHidden = menu.classList.contains('hidden');
+
+        if (isHidden) {
+          menu.classList.remove('hidden');
+          button.setAttribute('aria-expanded', 'true');
+        } else {
+          menu.classList.add('hidden');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  });
+</script>

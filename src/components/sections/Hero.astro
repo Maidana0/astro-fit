@@ -1,0 +1,67 @@
+---
+// Import the reusable Button component for consistent styling
+import Button from '../ui/Button.astro';
+
+// Static hero content - perfect for Astro's server-side rendering
+// No client-side JavaScript needed, resulting in optimal performance and fast loading
+---
+
+<!-- 
+  Hero Section Component
+  - Purely static content ideal for Astro's zero-JS approach
+  - Uses CSS-only responsive design for maximum performance
+  - Dark overlay pattern provides text readability over background images
+-->
+<section
+  class="relative bg-gray-900 text-white min-h-screen flex items-center"
+  id="home"
+>
+  <!-- 
+    Dark overlay for text contrast
+    Can be replaced with background image + overlay in future iterations
+  -->
+  <div class="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800">
+  </div>
+
+  <!-- Content container with responsive padding and centering -->
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <!-- 
+      Main headline with responsive typography
+      Mobile-first approach: base size for mobile, larger on desktop
+    -->
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+      Transform Your
+      <span class="text-blue-400">Fitness Journey</span>
+    </h1>
+
+    <!-- 
+      Supporting text with optimal line length for readability
+      Responsive text sizing and spacing
+    -->
+    <p
+      class="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+    >
+      Achieve your fitness goals with personalized training, expert nutrition
+      guidance, and a supportive community.
+    </p>
+
+    <!-- 
+      Call-to-action buttons using imported Button component
+      Responsive layout: stacked on mobile, inline on larger screens
+    -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <Button variant="primary" size="lg" href="/services">
+        Start Your Journey
+      </Button>
+      <Button variant="outline" size="lg" href="/contact"> Learn More </Button>
+    </div>
+  </div>
+</section>
+
+<!-- 
+  Why this component is perfect for Astro:
+  - Static content with no interactivity requirements
+  - Server-side rendered for optimal SEO and performance
+  - No JavaScript bundle sent to client
+  - Fast Time to Interactive (TTI) and First Contentful Paint (FCP)
+-->

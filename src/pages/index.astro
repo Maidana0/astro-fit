@@ -1,7 +1,56 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+// Import base layout and page sections
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import ServicesGrid from '../components/sections/ServicesGrid.astro';
+import PricingSection from '../components/sections/PricingSection.astro';
+import TestimonialsSection from '../components/sections/TestimonialsSection.astro';
+
+// Page metadata for SEO and social sharing
+const pageTitle = 'AstroFit - Transform Your Fitness Journey';
+const pageDescription =
+  'Achieve your fitness goals with personalized training, expert nutrition guidance, and a supportive community.';
 ---
 
-<BaseLayout>
-  <h1>Astro</h1>
+<!-- 
+  Homepage Layout Structure
+  - Uses BaseLayout for consistent site-wide structure (Header/Footer)
+  - Sections are rendered in strategic order for conversion funnel
+  - All components use static rendering for optimal performance
+-->
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- 
+    Hero Section: Primary conversion area
+    - Captures attention with compelling headline
+    - Provides clear value proposition
+    - Includes primary CTAs for user engagement
+  -->
+  <Hero />
+
+  <!-- 
+    Services Grid: Social proof and feature showcase
+    - Demonstrates core value offerings
+    - Uses imported services data for consistency
+    - Builds trust through detailed feature lists
+  -->
+  <ServicesGrid />
+
+  <!-- 
+    Pricing Section: Conversion optimization
+    - Clear pricing structure removes friction
+    - Popular plan highlighting guides decision making
+    - Final CTA before footer contact information
+  -->
+  <PricingSection />
+
+  <TestimonialsSection />
 </BaseLayout>
+
+<!-- 
+  Page Architecture Notes:
+  - All sections are statically rendered at build time
+  - No Astro Islands needed - purely presentational content
+  - Header/Footer contain minimal JavaScript (mobile menu toggle only)
+  - Optimal performance with zero unnecessary client-side JavaScript
+  - SEO-friendly with server-side rendering and semantic HTML
+-->

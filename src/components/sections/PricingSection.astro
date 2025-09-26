@@ -1,0 +1,91 @@
+---
+// Import Button component for consistent CTA styling
+import Button from '../ui/Button.astro';
+import {pricing} from "../../data/pricing";
+---
+
+<!-- 
+  Pricing Section Component
+  - Uses internal data for pricing-specific information
+  - Responsive grid layout with mobile stacking
+  - Highlights popular plan for conversion optimization
+-->
+<section class="py-16 bg-gray-50" id="pricing">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section header with compelling copy -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        Choose Your Plan
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Flexible pricing options to fit your fitness journey and budget
+      </p>
+    </div>
+    
+    <!-- 
+      Responsive pricing grid:
+      - Mobile: Single column stack for easy comparison
+      - Desktop (lg:): 3 columns for side-by-side comparison
+    -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- 
+        Iterate over pricing plans with conditional styling
+        Popular plan gets enhanced visual treatment for conversion
+      -->
+      {pricing.map((plan) => (
+        <div class={`relative bg-white rounded-lg shadow-md p-8 ${plan.popular ? 'ring-2 ring-blue-500 transform scale-105' : ''}`}>
+          
+          <!-- Popular badge for highlighted plan -->
+          {plan.popular && (
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                Most Popular
+              </span>
+            </div>
+          )}
+          
+          <!-- Plan header with name and pricing -->
+          <div class="text-center mb-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">{plan.name}</h3>
+            <div class="flex items-baseline justify-center">
+              <span class="text-4xl font-bold text-gray-900">{plan.price}</span>
+              <span class="text-gray-600 ml-1">{plan.duration}</span>
+            </div>
+          </div>
+          
+          <!-- 
+            Features list with consistent styling
+            Maps over features array for dynamic content
+          -->
+          <ul class="space-y-3 mb-8">
+            {plan.features.map((feature) => (
+              <li class="flex items-center text-gray-700">
+                <span class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          
+          <!-- CTA button using imported Button component -->
+          <Button 
+            variant={plan.popular ? "primary" : "outline"} 
+            size="lg" 
+            class="w-full"
+            href="/contact"
+          >
+            Get Started
+          </Button>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- 
+  Why pricing data is internal vs external file:
+  - Pricing is component-specific and not reused elsewhere
+  - Frequent changes require tight coupling with component logic
+  - Popular flag and styling logic are presentation concerns
+  - Services data is reusable, pricing data is contextual
+-->

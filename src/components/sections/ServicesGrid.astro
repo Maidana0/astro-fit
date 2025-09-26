@@ -1,0 +1,54 @@
+---
+// Import services data and ServiceCard component
+import { services } from '../../data/services.ts';
+import ServiceCard from '../ui/ServiceCard.astro';
+
+// Static data fetching at build time - perfect for Astro's performance model
+// No client-side JavaScript needed for this purely presentational component
+---
+
+<!-- 
+  Services Grid Section
+  - Uses imported services data for type-safe iteration
+  - Responsive grid layout with mobile-first approach
+  - Static rendering ensures fast loading and optimal SEO
+-->
+<section class="py-16 bg-white" id="services">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section heading with centered alignment -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        Our Core Services
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Comprehensive fitness solutions designed to help you achieve your goals
+      </p>
+    </div>
+
+    <!-- 
+      Responsive grid container:
+      - Mobile (base): 1 column for optimal mobile viewing
+      - Tablet (md:): 2 columns for balanced layout
+      - Desktop (lg:): 3 columns for full service display
+      Gap provides consistent spacing between cards
+    -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- 
+        Astro template iteration using map function:
+        - services.map() iterates over imported services array
+        - Each service object is passed as prop to ServiceCard component
+        - Type safety ensured through Service interface
+        - Static rendering at build time for optimal performance
+      -->
+      {services.map((service) => <ServiceCard service={service} />)}
+    </div>
+  </div>
+</section>
+
+<!-- 
+  Benefits of this approach:
+  - Data separation allows easy content updates without component changes
+  - Type-safe iteration prevents runtime errors
+  - Responsive grid adapts to all screen sizes
+  - Zero JavaScript sent to client for maximum performance
+-->

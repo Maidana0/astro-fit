@@ -1,0 +1,45 @@
+---
+// Props interface for testimonial data with strong typing
+export interface Props {
+  quote: string;
+  author: string;
+  position: string;
+}
+
+// Destructure props for clean component usage
+const { quote, author, position } = Astro.props;
+---
+
+<!-- 
+  Testimonial Card Component
+  - Uses semantic HTML with figure/blockquote for accessibility
+  - Static content perfect for Astro's server-side rendering
+  - Clean card design with subtle shadows and spacing
+-->
+<figure class="bg-gray-50 p-6 rounded-lg shadow-md">
+  <!-- 
+    Blockquote element for semantic quote content
+    Large text size for emphasis and readability
+  -->
+  <blockquote class="text-lg text-gray-700 mb-4 italic leading-relaxed">
+    "{quote}"
+  </blockquote>
+
+  <!-- 
+    Author information section with profile placeholder and details
+    Flex layout for horizontal alignment of avatar and text
+  -->
+  <figcaption class="flex items-center space-x-3">
+    <!-- 
+      Circular profile image placeholder
+      Uses Tailwind's aspect ratio and background for consistent sizing
+    -->
+    <div class="w-12 h-12 bg-gray-300 rounded-full flex-shrink-0"></div>
+
+    <!-- Author details with name and position hierarchy -->
+    <div>
+      <div class="font-semibold text-gray-900">{author}</div>
+      <div class="text-sm text-gray-600">{position}</div>
+    </div>
+  </figcaption>
+</figure>

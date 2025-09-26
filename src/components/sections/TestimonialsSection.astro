@@ -1,0 +1,58 @@
+---
+// Import testimonials data and TestimonialCard component
+import { testimonials } from '../../data/testimonials.ts';
+import TestimonialCard from '../ui/TestimonialCard.astro';
+
+// Static testimonial data fetching at build time
+// No client-side JavaScript needed for optimal performance
+---
+
+<!-- 
+  Testimonials Section Component
+  - Uses imported testimonials data for type-safe iteration
+  - Responsive grid layout adapts to screen sizes
+  - Social proof section to build trust and credibility
+-->
+<section class="py-16 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        What Our Clients Say
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Real stories from real people who transformed their lives with AstroFit
+      </p>
+    </div>
+    
+    <!-- 
+      Responsive testimonials grid:
+      - Mobile (base): 1 column for readability
+      - Tablet (md:): 2 columns for balanced layout
+      - Desktop (lg:): 3 columns for full testimonial display
+    -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- 
+        Iterate over testimonials array using map function
+        Each testimonial object passed as individual props to TestimonialCard
+        Type safety ensured through Testimonial interface
+      -->
+      {testimonials.map((testimonial) => (
+        <TestimonialCard 
+          quote={testimonial.quote}
+          author={testimonial.author}
+          position={testimonial.position}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- 
+  Benefits of this testimonials approach:
+  - Separated data allows easy content updates without component changes
+  - Type-safe iteration prevents runtime errors
+  - Responsive design ensures optimal viewing on all devices
+  - Static rendering provides fast loading and SEO benefits
+-->

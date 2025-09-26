@@ -1,0 +1,62 @@
+---
+// Import Service interface for proper TypeScript typing
+import type { Service } from '../../data/services.ts';
+
+// Props interface using imported Service type for consistency
+export interface Props {
+  service: Service;
+}
+
+// Destructure service prop for clean access to properties
+const { service } = Astro.props;
+---
+
+<!-- 
+  Service Card Component
+  - Accepts typed Service object ensuring data consistency
+  - Hover effects for enhanced user interaction
+  - Iterates over features array for dynamic content display
+-->
+<div
+  class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+>
+  <!-- 
+    Service header with icon placeholder and title
+    Icon uses simple placeholder that can be replaced with actual icon system
+  -->
+  <div class="flex items-center mb-4">
+    <div
+      class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4"
+    >
+      <span class="text-blue-600 font-semibold text-sm">{service.icon}</span>
+    </div>
+    <h3 class="text-xl font-semibold text-gray-900">{service.title}</h3>
+  </div>
+
+  <!-- Service description with optimal line spacing -->
+  <p class="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
+
+  <!-- 
+    Features list using unordered list for semantic structure
+    Iterates over service.features array using Astro's map syntax
+    Each feature gets consistent styling and spacing
+  -->
+  <ul class="space-y-2">
+    {
+      service.features.map((feature) => (
+        <li class="flex items-center text-sm text-gray-700">
+          <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 flex-shrink-0" />
+          {feature}
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<!-- 
+  TypeScript integration benefits:
+  - service prop is fully typed using imported Service interface
+  - IntelliSense support for service properties (id, title, description, etc.)
+  - Compile-time validation prevents runtime errors
+  - features.map() iteration is type-safe with string array
+-->
