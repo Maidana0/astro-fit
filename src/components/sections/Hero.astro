@@ -55,7 +55,12 @@ import Button from '@ui/Button.astro';
       <Button variant="primary" size="lg" href="/#contacto" class="text-lg">
         Empezar Hoy - Consulta Gratis
       </Button>
-      <Button variant="outline" size="lg" href="#servicios" class="text-lg">
+      <Button
+        variant="outline"
+        size="lg"
+        href="#servicios"
+        class="text-lg text-white border-border-violet-600/50"
+      >
         Ver Planes y Precios
       </Button>
     </div>
@@ -65,17 +70,23 @@ import Button from '@ui/Button.astro';
       Builds credibility through credentials and guarantees
     -->
     <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-      <div class="space-y-2">
-        <div class="text-3xl font-bold text-violet-400">+50</div>
-        <div class="text-violet-200">Clientes Transformados</div>
+      <div
+        class="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300"
+      >
+        <div class="text-4xl font-bold text-violet-300 mb-2">+50</div>
+        <div class="text-violet-100 font-medium">Clientes Transformados</div>
       </div>
-      <div class="space-y-2">
-        <div class="text-3xl font-bold text-violet-400">100%</div>
-        <div class="text-violet-200">Seguimiento Personalizado</div>
+      <div
+        class="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300"
+      >
+        <div class="text-4xl font-bold text-violet-300 mb-2">100%</div>
+        <div class="text-violet-100 font-medium">Seguimiento Personalizado</div>
       </div>
-      <div class="space-y-2">
-        <div class="text-3xl font-bold text-violet-400">24/7</div>
-        <div class="text-violet-200">Soporte por WhatsApp</div>
+      <div
+        class="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300"
+      >
+        <div class="text-4xl font-bold text-violet-300 mb-2">24/7</div>
+        <div class="text-violet-100 font-medium">Soporte por WhatsApp</div>
       </div>
     </div>
   </div>
