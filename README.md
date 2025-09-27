@@ -4,13 +4,45 @@
 
 Un template moderno y completo para entrenadores personales construido con **Astro** y **Amazon Q Developer**. Diseñado específicamente para el mercado argentino con terminología local, precios en ARS y integración con WhatsApp.
 
+## 📋 Tabla de Contenidos
+
+### 🎯 **Información del Proyecto**
+- [🌟 Características](#-características)
+- [🏗️ Arquitectura del Proyecto](#️-arquitectura-del-proyecto)
+- [🚀 Demo en Vivo](#-demo-en-vivo)
+- [🛠️ Stack Tecnológico](#️-stack-tecnológico)
+
+### ⚡ **Inicio Rápido**
+- [⚡ Instalación](#-inicio-rápido)
+- [🎨 Personalización](#-personalización)
+- [📱 Funcionalidades Principales](#-funcionalidades-principales)
+
+### 🤖 **Desarrollo con IA**
+- [🤖 Proceso de Construcción](#-proceso-de-construcción-con-amazon-q-developer)
+- [📋 Prompt Especializado](#-prompt-especializado-utilizado)
+- [💬 Conversaciones Destacadas](#-conversaciones-destacadas-con-amazon-q-developer)
+- [🎯 Resultados del Desarrollo](#-resultados-del-desarrollo-asistido-por-ia)
+
+### 📊 **Métricas y Casos de Uso**
+- [📊 Métricas de Rendimiento](#-métricas-de-rendimiento)
+- [🎯 Casos de Uso](#-casos-de-uso)
+- [💡 Lecciones Aprendidas](#-lecciones-aprendidas-del-desarrollo-con-ia)
+
+### 🔗 **Recursos**
+- [🤝 Contribuciones](#-contribuciones)
+- [📄 Licencia](#-licencia)
+- [🙏 Agradecimientos](#-agradecimientos)
+- [🔗 Enlaces Útiles](#-enlaces-útiles)
+
+---
+
 ## Amazon Q Developer
 
 ![Amazon Q Developer](https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2024/11/27/Q-dev-unit-tests-code-review-feat-img.png)
 
 ## Aplicación Desplegada
 
-![AstroFit Template](https://i.ibb.co/5W9j6nZ4/astro-fit.jpg)
+![AstroFit Template](https://i.ibb.co/HD2PVxZ4/astro-fit.jpg)
 
 ## 🌟 Características
 
@@ -70,7 +102,7 @@ Para este proyecto se utilizó un prompt especializado en Astro que se encuentra
 
 #### 1. Arquitectura Inicial
 
-![Conversación: Setup inicial de Astro](https://i.ibb.co/Gft7fmcC/1.jpg)
+![Conversación: Setup inicial de Astro](https://i.ibb.co/p6R26qJ4/1.jpg)
 
 - Configuración del proyecto base
 - Estructura de carpetas y componentes
@@ -78,8 +110,8 @@ Para este proyecto se utilizó un prompt especializado en Astro que se encuentra
 
 #### 2. Sistema de Componentes
 
-![Conversación: Creación de componentes 1](https://i.ibb.co/0jsLSmkV/2.jpg)
-![Conversación: Creación de componentes 2](https://i.ibb.co/S7dbF2mM/2-1.jpg)
+![Conversación: Creación de componentes 1](https://i.ibb.co/xSFb0Xy8/2.jpg)
+![Conversación: Creación de componentes 2](https://i.ibb.co/93V6QJ41/2-1.jpg)
 
 - Desarrollo de componentes UI reutilizables
 - Implementación de layouts especializados
@@ -87,8 +119,8 @@ Para este proyecto se utilizó un prompt especializado en Astro que se encuentra
 
 #### 3. Sistema de Publicaciones
 
-![Conversación: Blog y contenido 1](https://i.ibb.co/yFHqw839/3-1.jpg)
-![Conversación: Blog y contenido 2](https://i.ibb.co/C3c0hj4c/3-2.jpg)
+![Conversación: Blog y contenido 1](https://i.ibb.co/VYfT7vK1/3-1.jpg)
+![Conversación: Blog y contenido 2](https://i.ibb.co/FLr7gQcr/3-2.jpg)
 
 - Creación del sistema de posts
 - Implementación de PostCard components
@@ -96,9 +128,9 @@ Para este proyecto se utilizó un prompt especializado en Astro que se encuentra
 
 #### 4. Optimizaciones UX/UI
 
-![Conversación: Mejoras de diseño 1](https://i.ibb.co/hFxXCgHz/4.jpg)
-![Conversación: Mejoras de diseño 2](https://i.ibb.co/RGtD5PbY/4-1.jpg)
-![Conversación: Mejoras de diseño 3](https://i.ibb.co/9HhydjLn/4-2.jpg)
+![Conversación: Mejoras de diseño 1](https://i.ibb.co/gZbv6rwK/4.jpg)
+![Conversación: Mejoras de diseño 2](https://i.ibb.co/LDBZG6RY/4-1.jpg)
+![Conversación: Mejoras de diseño 3](https://i.ibb.co/Ldr9sfWS/4-2.jpg)
 
 - Efectos hover y transiciones
 - Mejoras en tipografía y espaciado
@@ -106,7 +138,7 @@ Para este proyecto se utilizó un prompt especializado en Astro que se encuentra
 
 #### 5. Integración de Datos
 
-![Conversación: Refactoring de datos](https://i.ibb.co/0T2pLXz/5.jpg)
+![Conversación: Refactoring de datos](https://i.ibb.co/ytPmCRx/5.jpg)
 
 - Reestructuración de archivos de datos
 - Implementación de interfaces TypeScript
@@ -120,8 +152,8 @@ Para este proyecto se utilizó un prompt especializado en Astro que se encuentra
 - **Performance**: Optimizaciones implementadas durante el desarrollo
 - **Accesibilidad**: Estándares WCAG aplicados consistentemente
 
-![Proceso para crear el README](https://i.ibb.co/zWc25J4C/make-readme.jpg)
-![Proceso para crear el README - 2](https://i.ibb.co/nq1QnsdR/make-readme-2.jpg)
+![Proceso para crear el README](https://i.ibb.co/kVnDy1Sz/make-readme.jpg)
+![Proceso para crear el README - 2](https://i.ibb.co/vCdLQxyD/make-readme-2.jpg)
 
 ## 🚀 Demo en Vivo
 
