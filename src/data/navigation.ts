@@ -3,7 +3,7 @@ type navigatinoItem = {
   href: string;
 };
 
-export const base = '/astro-fit';
+export const base = '';
 
 export const navigation: navigatinoItem[] = [
   { name: 'Inicio', href: `${base}/#inicio` },

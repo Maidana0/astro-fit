@@ -16,7 +16,7 @@ export interface Props {
 const {
   title,
   description = 'Entrenamiento personalizado y asesoría nutricional en Buenos Aires. Transformá tu cuerpo con un profesional.',
-  image = '/astro-fit/favicon-32x32.png',
+  image = '/favicon-32x32.png',
   canonical = Astro.url.pathname,
 } = Astro.props;
 ---
@@ -48,11 +48,11 @@ const {
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/astro-fit/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/astro-fit/android-chrome-192x192.png"
+      href="/android-chrome-192x192.png"
     />
 
     <!-- Preconnect for performance -->
@@ -94,7 +94,7 @@ const {
           "addressCountry": "AR"
         },
         "telephone": "+54-11-1234-5678",
-        "url": "https://maidana0.github.io/astro-fit",
+        "url": "https://maidana0.github.io/astro-fit/",
         "priceRange": "ARS $15,000 - $35,000",
         "serviceArea": {
           "@type": "City",

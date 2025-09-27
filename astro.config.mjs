@@ -7,6 +7,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: 'https://maidana0.github.io',
-  base: 'astro-fit',
+  // Remove base for Amplify deployment
+  // site: 'https://maidana0.github.io',
+  // base: 'astro-fit',
 });
