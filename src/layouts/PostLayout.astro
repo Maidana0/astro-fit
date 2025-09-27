@@ -17,35 +17,37 @@ const { title, description, gradient } = Astro.props;
   <!-- Post header with gradient background -->
   <header class={`py-16 bg-gradient-to-r ${gradient}`}>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">{title}</h1>
-      <p class="text-xl text-white/90 max-w-2xl mx-auto">{description}</p>
+      <h1 class="text-4xl sm:text-5xl font-bold text-white mb-5">{title}</h1>
+      <h2 class="text-xl text-white/90 max-w-2xl mx-auto font-medium">
+        {description}
+      </h2>
     </div>
   </header>
 
   <!-- Post content -->
-  <main class="py-12 bg-white">
+  <section class="py-12 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <article class="prose prose-lg max-w-none">
         <slot />
       </article>
 
       <!-- Post footer with CTA -->
-      <div class="mt-12 p-8 bg-gradient-to-r from-violet-50 to-purple-50 rounded-2xl text-center">
-        <h3 class="text-2xl font-bold text-gray-900 mb-4">
-          ¿Te Gustó Este Contenido?
-        </h3>
-        <p class="text-gray-600 mb-6">
-          Seguí nuestros consejos y comenzá tu transformación hoy
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button variant="primary" size="lg" href="/contacto">
-            Consulta Gratuita
-          </Button>
-          <Button variant="outline" size="lg" href="/">
-            Volver al Inicio
-          </Button>
-        </div>
-      </div>
     </div>
-  </main>
+  </section>
+  <section
+    class="py-16 px-8 bg-gradient-to-r from-violet-50 to-purple-50 rounded-2xl text-center"
+  >
+    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+      ¿Te Gustó Este Contenido?
+    </h3>
+    <p class="text-gray-600 mb-6">
+      Seguí nuestros consejos y comenzá tu transformación hoy
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <Button variant="primary" size="lg" href="/contacto">
+        Consulta Gratuita
+      </Button>
+      <Button variant="outline" size="lg" href="/"> Volver al Inicio </Button>
+    </div>
+  </section>
 </BaseLayout>
