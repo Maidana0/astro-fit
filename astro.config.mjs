@@ -7,4 +7,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  site: 'https://maidana0.github.io',
+  base: 'astro-fit',
 });
