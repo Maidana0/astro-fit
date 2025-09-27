@@ -16,7 +16,7 @@ export interface Props {
 const {
   title,
   description = 'Entrenamiento personalizado y asesoría nutricional en Buenos Aires. Transformá tu cuerpo con un profesional.',
-  image = '/og-image.jpg',
+  image = '/astro-fit/favicon-32x32.png',
   canonical = Astro.url.pathname,
 } = Astro.props;
 ---
@@ -30,7 +30,7 @@ const {
     <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <!-- <link rel="canonical" href={new URL(canonical, Astro.site)} /> -->
+    <link rel="canonical" href={new URL(canonical, Astro.site)} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -48,8 +48,12 @@ const {
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/astro-fit/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/astro-fit/android-chrome-192x192.png"
+    />
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -90,7 +94,7 @@ const {
           "addressCountry": "AR"
         },
         "telephone": "+54-11-1234-5678",
-        "url": "https://astrofit.com.ar",
+        "url": "https://maidana0.github.io/astro-fit",
         "priceRange": "ARS $15,000 - $35,000",
         "serviceArea": {
           "@type": "City",
