@@ -17,7 +17,6 @@ const {
   title,
   description = 'Entrenamiento personalizado y asesoría nutricional en Buenos Aires. Transformá tu cuerpo con un profesional.',
   image = '/favicon-32x32.png',
-  canonical = Astro.url.pathname,
 } = Astro.props;
 ---
 
@@ -30,7 +29,6 @@ const {
     <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={new URL(canonical, Astro.site)} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
