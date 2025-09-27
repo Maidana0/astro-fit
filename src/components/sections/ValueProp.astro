@@ -1,9 +1,7 @@
 ---
 // Value proposition section for Argentine PT market
 // Highlights professional credentials and unique selling points
-import ElectricBolt from '@assets/electric_bolt.svg';
-import School from '@assets/school.svg';
-import Chat from '@assets/chat.svg';
+import { valuePropositions } from '@data/valueProp.ts';
 ---
 
 <!-- 
@@ -25,70 +23,23 @@ import Chat from '@assets/chat.svg';
       </p>
     </div>
 
-    <!-- 
-      Value propositions grid
-      Three key differentiators for Argentine PT market
-    -->
+    <!-- Value propositions grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Professional Credentials -->
-      <div
-        class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
-      >
-        <div
-          class="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mx-auto mb-4"
-        >
-          <span class="text-violet-600 font-bold text-2xl"
-            ><School class="size-10" /></span
-          >
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-3">
-          Formación Profesional
-        </h3>
-        <p class="text-gray-600 leading-relaxed">
-          Estudiante avanzado de Educación Física con certificaciones en
-          entrenamiento funcional y nutrición deportiva.
-        </p>
-      </div>
-
-      <!-- WhatsApp Follow-up -->
-      <div
-        class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
-      >
-        <div
-          class="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mx-auto mb-4"
-        >
-          <span class="text-violet-600 font-bold text-2xl"
-            ><Chat class="size-10" /></span
-          >
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-3">
-          Seguimiento por WhatsApp
-        </h3>
-        <p class="text-gray-600 leading-relaxed">
-          Comunicación directa y constante. Resolvemos dudas al instante y
-          ajustamos tu plan según tu progreso.
-        </p>
-      </div>
-
-      <!-- Flexible Routines -->
-      <div
-        class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
-      >
-        <div
-          class="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mx-auto mb-4"
-        >
-          <span class="text-violet-600 font-bold text-2xl"
-            ><ElectricBolt class="size-10" /></span
-          >
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-3">
-          Rutinas Flexibles
-        </h3>
-        <p class="text-gray-600 leading-relaxed">
-          Adaptamos los entrenamientos a tu horario, espacio disponible y nivel
-          de experiencia. Casa o gimnasio.
-        </p>
-      </div>
+      {
+        valuePropositions.map((prop) => (
+          <div class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-violet-600 font-bold text-2xl">
+                {<prop.icon class="size-7" />}
+              </span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              {prop.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">{prop.description}</p>
+          </div>
+        ))
+      }
     </div>
 
     <!-- 

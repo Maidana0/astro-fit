@@ -11,14 +11,14 @@ export interface Props {
 // Destructure props with sensible defaults
 const { variant = 'primary', size = 'lg', href, class: className = '', type = 'button', ...rest } = Astro.props;
 
-// Base styles shared across all button variants for consistency
-const baseStyles = 'inline-flex items-center justify-center font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50';
+// Base styles shared across all button variants for consistency and accessibility
+const baseStyles = 'inline-flex items-center justify-center font-medium rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95';
 
-// Variant-specific styling with proper contrast and accessibility
+// Variant-specific styling with purple theme and proper contrast
 const variantStyles = {
-  primary: 'bg-violet-600 hover:bg-violet-700 text-white focus:ring-violet-500 ',
-  secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500',
-  outline: 'border border-violet-600 bg-white text-violet-600 hover:bg-violet-600 hover:text-white focus:ring-violet-500'
+  primary: 'bg-violet-600 text-white hover:bg-violet-700 focus:ring-violet-500 shadow-lg hover:shadow-xl',
+  secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-violet-500',
+  outline: 'border-2 border-violet-600 bg-white text-violet-600 hover:bg-violet-600 hover:text-white focus:ring-violet-500'
 };
 
 // Size-specific padding and text sizing for responsive design
@@ -39,12 +39,12 @@ const buttonClasses = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size
 -->
 {href ? (
   <!-- Link variant: Uses anchor tag with href for navigation -->
-  <a href={href} class={buttonClasses} tabindex="0" {...rest}>
+  <a href={href} class={buttonClasses} role="button" {...rest}>
     <slot />
   </a>
 ) : (
   <!-- Button variant: Uses button tag for interactions -->
-  <button type={type} class={buttonClasses} tabindex="0" {...rest}>
+  <button type={type} class={buttonClasses} {...rest}>
     <slot />
   </button>
 )}
