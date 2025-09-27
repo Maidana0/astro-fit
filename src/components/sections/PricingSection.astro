@@ -2,6 +2,7 @@
 // Import Button component for consistent CTA styling
 import Button from '@ui/Button.astro';
 import { pricingPlans } from '@data/pricing.ts';
+import { navigation } from '~/data/navigation';
 ---
 
 <!-- 
@@ -73,7 +74,7 @@ import { pricingPlans } from '@data/pricing.ts';
             variant={plan.popular ? "primary" : "outline"} 
             size="lg" 
             class={`w-full`}
-            href="/#contacto"
+            href={navigation[4].href}
           >
             Comenzar Ahora
           </Button>

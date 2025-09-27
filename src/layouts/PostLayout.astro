@@ -1,6 +1,7 @@
 ---
 // Layout for individual publication posts
 // Optimized for fitness content with social sharing
+import { base, navigation } from '~/data/navigation';
 import BaseLayout from './BaseLayout.astro';
 import Button from '@components/ui/Button.astro';
 
@@ -27,6 +28,13 @@ const { title, description, gradient } = Astro.props;
   <!-- Post content -->
   <section class="py-12 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Go back link -->
+      <div class="mb-8">
+        <Button variant="outline" size="sm" href={navigation[2].href}>
+          Volver
+        </Button>
+      </div>
+
       <article class="prose prose-lg max-w-none">
         <slot />
       </article>
@@ -44,10 +52,12 @@ const { title, description, gradient } = Astro.props;
       Seguí nuestros consejos y comenzá tu transformación hoy
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <Button variant="primary" size="lg" href="/contacto">
+      <Button variant="primary" size="lg" href={navigation[3].href}>
         Consulta Gratuita
       </Button>
-      <Button variant="outline" size="lg" href="/"> Volver al Inicio </Button>
+      <Button variant="outline" size="lg" href={base}>
+        Volver al Inicio
+      </Button>
     </div>
   </section>
 </BaseLayout>

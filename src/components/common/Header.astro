@@ -1,5 +1,5 @@
 ---
-import { navigation } from '@data/navigation';
+import { base, navigation } from '@data/navigation';
 
 // Server-side logic: No data fetching needed for static navigation
 // This component is purely presentational and uses Astro's static rendering
@@ -21,7 +21,7 @@ import { navigation } from '@data/navigation';
       <!-- Logo Section: Consistent across all screen sizes -->
       <div class="flex-shrink-0">
         <a
-          href="/"
+          href={base}
           class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
         >
           AstroFit Logo

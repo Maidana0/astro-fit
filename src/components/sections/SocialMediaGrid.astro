@@ -2,6 +2,8 @@
 // Social media grid section for content authority
 // Showcases recent tips and maintains site freshness
 import { socialPosts } from '@data/socialMedia.ts';
+import { base } from '~/data/navigation';
+import NavigationPostCard from '../ui/NavigationPostCard.astro';
 ---
 
 <!-- 
@@ -27,17 +29,18 @@ import { socialPosts } from '@data/socialMedia.ts';
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {
           socialPosts.map((post) => (
-            <a
-              href={`/publicaciones/${post.slug}`}
-              class={`group block bg-gradient-to-br ${post.gradient} aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105`}
-            >
-              <div class="w-full h-full flex flex-col justify-end p-6 text-white">
-                <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4">
-                  <h3 class="font-semibold text-lg mb-2">{post.title}</h3>
-                  <p class="text-sm opacity-90">{post.description}</p>
-                </div>
-              </div>
-            </a>
+            // <a
+            //   href={`/${base}/publicaciones/${post.slug}`}
+            //   class={`group block bg-gradient-to-br ${post.gradient} aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105`}
+            // >
+            //   <div class="w-full h-full flex flex-col justify-end p-6 text-white">
+            //     <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4">
+            //       <h3 class="font-semibold text-lg mb-2">{post.title}</h3>
+            //       <p class="text-sm opacity-90">{post.description}</p>
+            //     </div>
+            //   </div>
+            // </a>
+            <NavigationPostCard post={post} />
           ))
         }
       </div>

@@ -1,6 +1,7 @@
 ---
 // Import Button component for consistent CTA styling
 import Button from '@ui/Button.astro';
+import { navigation } from '~/data/navigation';
 
 // Static hero content optimized for Argentine PT market
 // Emphasizes personal transformation and professional credentials
@@ -52,13 +53,18 @@ import Button from '@ui/Button.astro';
       Primary: immediate action, Secondary: information gathering
     -->
     <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-      <Button variant="primary" size="lg" href="/#contacto" class="text-lg">
+      <Button
+        variant="primary"
+        size="lg"
+        href={navigation[4].href}
+        class="text-lg"
+      >
         Empezar Hoy - Consulta Gratis
       </Button>
       <Button
         variant="outline"
         size="lg"
-        href="#servicios"
+        href={navigation[1].href}
         class="text-lg text-white border-border-violet-600/50"
       >
         Ver Planes y Precios

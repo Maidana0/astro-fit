@@ -1,0 +1,27 @@
+---
+import { posts } from '@data/posts';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NavigationPostCard from '~/components/ui/NavigationPostCard.astro';
+---
+
+<BaseLayout title="Publicaciones - AstroFit">
+  <section
+    class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
+  >
+    <div class="container mx-auto px-4 py-20">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+          Publicaciones
+        </h1>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          Tips, consejos y guías para maximizar tu entrenamiento y alcanzar tus
+          objetivos fitness
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {posts.map((post) => <NavigationPostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

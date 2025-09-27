@@ -1,6 +1,7 @@
 ---
 // Call to action section for homepage conversion
 import Button from '@components/ui/Button.astro';
+import { navigation } from '~/data/navigation';
 ---
 
 <!-- CTA Section: Final conversion push -->
@@ -18,10 +19,20 @@ import Button from '@components/ui/Button.astro';
     <div
       class="flex flex-col sm:flex-row gap-4 justify-center sm:max-w-full max-w-xs mx-auto"
     >
-      <Button variant="primary" size="lg" href="/contacto" class="px-8">
+      <Button
+        variant="primary"
+        size="lg"
+        href={navigation[4].href}
+        class="px-8"
+      >
         Consulta Gratuita
       </Button>
-      <Button variant="secondary" size="lg" href="/servicios" class="px-8">
+      <Button
+        variant="secondary"
+        size="lg"
+        href={navigation[3].href}
+        class="px-8"
+      >
         Ver Servicios
       </Button>
     </div>
