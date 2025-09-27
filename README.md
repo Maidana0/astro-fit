@@ -10,7 +10,7 @@ Un template moderno y completo para entrenadores personales construido con **Ast
 
 ## Aplicación Desplegada
 
-![AstroFit Template](URL_DE_LA_IMAGEN_APLICACION)
+![AstroFit Template](https://i.ibb.co/5W9j6nZ4/astro-fit.jpg)
 
 ## 🌟 Características
 
@@ -125,9 +125,13 @@ Para este proyecto se utilizó un prompt especializado en Astro que se encuentra
 
 ## 🚀 Demo en Vivo
 
-**🔗 [Ver Demo Desplegado](URL_DEL_DEPLOYMENT_AMPLIFY)**
+**🔗 [Ver Demo Desplegado](https://amplify-deploy.d1wgrn99ulgnnx.amplifyapp.com)**
 
 Desplegado en AWS Amplify con integración continua desde GitHub.
+
+**🔗 [Ver Demo Desplegado](https://maidana0.github.io/astro-fit)**
+
+Desplegado en Github Pages con Github Actions configurado para Astro.
 
 ## ⚡ Inicio Rápido
 
