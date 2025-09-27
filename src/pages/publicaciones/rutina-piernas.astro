@@ -1,0 +1,13 @@
+---
+import PostLayout from '@layouts/PostLayout.astro';
+import PostCard from '@components/ui/PostCard.astro';
+import { getPostBySlug } from '@data/posts.ts';
+
+const post = getPostBySlug('rutina-piernas')!;
+---
+
+<PostLayout title={post.title} description={post.description} gradient={post.gradient}>
+  {post.sections.map((section) => (
+    <PostCard title={section.title} content={section.content} icon={section.icon} />
+  ))}
+</PostLayout>

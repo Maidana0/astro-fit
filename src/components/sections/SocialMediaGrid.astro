@@ -1,6 +1,7 @@
 ---
 // Social media grid section for content authority
 // Showcases recent tips and maintains site freshness
+import { socialPosts } from '@data/socialMedia.ts';
 ---
 
 <!-- 
@@ -21,112 +22,25 @@
       </p>
     </div>
 
-    <!-- 
-      Social media posts grid
-      6 placeholder posts in responsive grid layout
-    -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Post 1: Rutina de Piernas -->
-      <a
-        href="https://instagram.com/rutina-piernas"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group block bg-gradient-to-br from-violet-400 to-purple-500 aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
-      >
-        <div class="w-full h-full flex flex-col justify-end p-6 text-white">
-          <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4">
-            <h3 class="font-semibold text-lg mb-2">Rutina de Piernas</h3>
-            <p class="text-sm opacity-90">
-              5 ejercicios para fortalecer tus piernas en casa
-            </p>
-          </div>
-        </div>
-      </a>
-
-      <!-- Post 2: Nutrición Pre-Entreno -->
-      <a
-        href="https://instagram.com/nutricion-pre-entreno"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group block bg-gradient-to-br from-purple-400 to-indigo-500 aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
-      >
-        <div class="w-full h-full flex flex-col justify-end p-6 text-white">
-          <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4">
-            <h3 class="font-semibold text-lg mb-2">Nutrición Pre-Entreno</h3>
-            <p class="text-sm opacity-90">
-              Qué comer antes de entrenar para máximo rendimiento
-            </p>
-          </div>
-        </div>
-      </a>
-
-      <!-- Post 3: Ejercicios de Core -->
-      <a
-        href="https://instagram.com/ejercicios-core"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group block bg-gradient-to-br from-indigo-400 to-blue-500 aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
-      >
-        <div class="w-full h-full flex flex-col justify-end p-6 text-white">
-          <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4">
-            <h3 class="font-semibold text-lg mb-2">Core Fuerte</h3>
-            <p class="text-sm opacity-90">
-              Rutina de 10 minutos para fortalecer tu abdomen
-            </p>
-          </div>
-        </div>
-      </a>
-
-      <!-- Post 4: Hidratación -->
-      <a
-        href="https://instagram.com/hidratacion-fitness"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group block bg-gradient-to-br from-blue-400 to-cyan-500 aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
-      >
-        <div class="w-full h-full flex flex-col justify-end p-6 text-white">
-          <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4">
-            <h3 class="font-semibold text-lg mb-2">Hidratación Correcta</h3>
-            <p class="text-sm opacity-90">
-              Cuánta agua tomar según tu tipo de entrenamiento
-            </p>
-          </div>
-        </div>
-      </a>
-
-      <!-- Post 5: Descanso y Recuperación -->
-      <a
-        href="https://instagram.com/descanso-recuperacion"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group block bg-gradient-to-br from-cyan-400 to-teal-500 aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
-      >
-        <div class="w-full h-full flex flex-col justify-end p-6 text-white">
-          <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4">
-            <h3 class="font-semibold text-lg mb-2">Descanso Activo</h3>
-            <p class="text-sm opacity-90">
-              La importancia del descanso en tu transformación
-            </p>
-          </div>
-        </div>
-      </a>
-
-      <!-- Post 6: Motivación -->
-      <a
-        href="https://instagram.com/motivacion-fitness"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group block bg-gradient-to-br from-teal-400 to-green-500 aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
-      >
-        <div class="w-full h-full flex flex-col justify-end p-6 text-white">
-          <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4">
-            <h3 class="font-semibold text-lg mb-2">Mantené la Motivación</h3>
-            <p class="text-sm opacity-90">
-              5 estrategias para no abandonar tus objetivos
-            </p>
-          </div>
-        </div>
-      </a>
+    <!-- Social media posts grid -->
+    <div class="max-w-[calc(100svw-3rem)] mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          socialPosts.map((post) => (
+            <a
+              href={`/publicaciones/${post.slug}`}
+              class={`group block bg-gradient-to-br ${post.gradient} aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105`}
+            >
+              <div class="w-full h-full flex flex-col justify-end p-6 text-white">
+                <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4">
+                  <h3 class="font-semibold text-lg mb-2">{post.title}</h3>
+                  <p class="text-sm opacity-90">{post.description}</p>
+                </div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
     </div>
 
     <!-- Call to action for social media -->
