@@ -8,6 +8,6 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   // Remove base for Amplify deployment
-  // site: 'https://maidana0.github.io',
+  site: 'https://amplify-deploy.d1wgrn99ulgnnx.amplifyapp.com/',
   // base: 'astro-fit',
 });

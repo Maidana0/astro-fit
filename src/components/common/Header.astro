@@ -20,11 +20,13 @@ import { base, navigation } from '@data/navigation';
     <div class="flex justify-between items-center h-14">
       <!-- Logo Section: Consistent across all screen sizes -->
       <div class="flex-shrink-0">
-        <a
-          href={base}
-          class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
-        >
-          AstroFit Logo
+        <a href={base} class="flex items-center space-x-3 text-[#b02cf5]">
+          <img
+            src={base + 'favicon-32x32.png'}
+            alt="Site Logo"
+            class="h-9 w-auto inline"
+          />
+          <h3 class="text-2xl font-bold">AstroFit</h3>
         </a>
       </div>
 
@@ -95,30 +97,50 @@ import { base, navigation } from '@data/navigation';
 </header>
 
 <!-- 
-  Minimal Client-Side JavaScript: Only for mobile menu toggle
-  Uses vanilla JS to avoid framework overhead - aligns with Astro's performance philosophy
-  Scoped to this component to prevent global namespace pollution
+  Mobile menu toggle that works with Astro's client-side navigation
+  Uses astro:page-load event to reinitialize after navigation
 -->
 <script>
-  // Mobile menu toggle functionality
-  // Runs once on page load, minimal performance impact
-  document.addEventListener('DOMContentLoaded', () => {
+  function initMobileMenu() {
     const button = document.getElementById('mobile-menu-button');
     const menu = document.getElementById('mobile-menu');
+    const header = document.querySelector('header');
 
-    if (button && menu) {
-      button.addEventListener('click', () => {
-        // Toggle menu visibility
-        const isHidden = menu.classList.contains('hidden');
+    if (button && menu && header) {
+      // Remove existing listeners to prevent duplicates
+      button.replaceWith(button.cloneNode(true));
+      const newButton = document.getElementById('mobile-menu-button');
+      if (!newButton) return;
 
-        if (isHidden) {
+      // Toggle menu function
+      const toggleMenu = (show: boolean) => {
+        if (show) {
           menu.classList.remove('hidden');
-          button.setAttribute('aria-expanded', 'true');
+          newButton.setAttribute('aria-expanded', 'true');
         } else {
           menu.classList.add('hidden');
-          button.setAttribute('aria-expanded', 'false');
+          newButton.setAttribute('aria-expanded', 'false');
+        }
+      };
+
+      // Button click handler
+      newButton.addEventListener('click', () => {
+        const isHidden = menu.classList.contains('hidden');
+        toggleMenu(isHidden);
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e: MouseEvent) => {
+        if (
+          !header.contains(e.target as Node) &&
+          !menu.classList.contains('hidden')
+        ) {
+          toggleMenu(false);
         }
       });
     }
-  });
+  }
+
+  // Initialize on page load and after navigation
+  document.addEventListener('astro:page-load', initMobileMenu);
 </script>
